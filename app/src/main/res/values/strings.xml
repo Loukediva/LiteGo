@@ -1,6 +1,6 @@
 <resources>
 <string name="app_name">LiteGo</string>
 <string name="search_hint">Rechercher ou URL</string>
-<string name="home_url">https://duckduckgo.com</string>
+<string name="home_url">https://via-browser.com</string>
 <string name="video_found">Vidéo détectée ! Télécharger ?</string>
 </resources>
