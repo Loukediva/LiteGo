@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity() {
         var input = urlBar.text.toString().trim()
         if (input.isEmpty()) return
         if (!input.startsWith("http")) {
-            if (input.contains(".")) input = "https://$input" else input = "https://duckduckgo.com/?q=$input"
+            if (input.contains(".")) input = "https://$input" else input = "https://www.bing.com/search?q=$input"
         }
         webView.loadUrl(input)
         webView.requestFocus()
