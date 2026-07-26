@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="#121212">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal" android:background="@color/primary" android:gravity="center_vertical" android:padding="6dp">
+        <ImageButton android:id="@+id/btnTabs" android:layout_width="36dp" android:layout_height="36dp" android:background="?attr/selectableItemBackgroundBorderless" android:src="@android:drawable/ic_menu_sort_by_size" android:tint="#FFF"/>
+        <EditText android:id="@+id/urlBar" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:layout_marginHorizontal="6dp" android:background="@drawable/bg_search" android:hint="@string/search_hint" android:textColor="#FFF" android:hintTextColor="#888" android:padding="10dp" android:singleLine="true" android:textSize="14sp"/>
+        <ImageButton android:id="@+id/btnMenu" android:layout_width="36dp" android:layout_height="36dp" android:background="?attr/selectableItemBackgroundBorderless" android:src="@android:drawable/ic_menu_more" android:tint="#FFF"/>
+        <Button android:id="@+id/goBtn" android:layout_width="48dp" android:layout_height="36dp" android:text="Go" android:textColor="#000" android:backgroundTint="@color/accent" android:layout_marginStart="4dp"/>
+    </LinearLayout>
+    <ProgressBar android:id="@+id/progress" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="3dp" android:progressTint="@color/accent"/>
+    <WebView android:id="@+id/webview" android:layout_width="match_parent" android:layout_height="match_parent"/>
+</LinearLayout>
