@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 progress.visibility = View.GONE
                 if (!urlBar.hasFocus()) urlBar.setText(url)
-                view?.evaluateJavascript("(function(){var ads=['iframe[src*=ads]','[id*=ad-'],[class*=advert]'];ads.forEach(function(s){document.querySelectorAll(s).forEach(function(e){e.style.display='none'})})})()", null)
+                view?.evaluateJavascript("document.querySelectorAll('iframe').forEach(function(e){if(e.src.includes('ads')) e.style.display='none'});", null)
             }
             override fun shouldInterceptRequest(view: WebView?, request: WebResourceRequest?): WebResourceResponse? {
                 val url = request?.url.toString()
