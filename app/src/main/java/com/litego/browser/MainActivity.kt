@@ -102,14 +102,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadFromBar() {
-        var input = urlBar.text.toString().trim()
-        if (input.isEmpty()) return
-        if (!input.startsWith("http")) {
-            if (input.contains(".")) input = "https://$input" else input = "https://www.bing.com/search?q=$input"
-        }
-        webView.loadUrl(input)
+    var input = urlBar.text.toString().trim()
+    if (input.isEmpty()) return
+    
+    // Si l'utilisateur tape x.com ou twitter.com -> version lite qui marche en 3G
+    val lower = input.lowercase()
+    if (lower.contains("x.com") || lower.contains("twitter.com")) {
+        webView.loadUrl("https://mobile.twitter.com")
+        urlBar.setText("https://mobile.twitter.com")
         webView.requestFocus()
+        return
     }
+
+    if (!input.startsWith("http")) {
+        if (input.contains(".")) input = "https://$input" else input = "https://www.bing.com/search?q=$input"
+    }
+    webView.loadUrl(input)
+    webView.requestFocus()
+}
 
     private fun showMenu() {
         val options = arrayOf(if(nightMode) "Mode jour" else "Mode nuit", "Actualiser", "Accueil", "Effacer", "A propos")
